@@ -1,4 +1,6 @@
-﻿using DapperProject.Services;
+﻿using DapperProject.Dtos.PlatesDtos;
+using DapperProject.Models;
+using DapperProject.Services;
 using Microsoft.AspNetCore.Mvc;
 using X.PagedList;
 
@@ -14,11 +16,22 @@ namespace DapperProject.Controllers
 			_carlistService = carlistService;
 		}
 
-		public async Task<IActionResult> Index(int sayfa=1)
+		public async Task<IActionResult> Index(SearchViewModel? dto,int sayfa=1,int pageSize=20)
         {
-           var values = await _carlistService.GetPlatesList();
-            return View(values.ToList().ToPagedList(sayfa,20));
+            
+            if(!string.IsNullOrEmpty(dto.Brand))
+            {
+				var values = await _carlistService.SearchPlates(dto);
+				return View(values.ToList().ToPagedList(sayfa, 20));
+			}
+            else 
+            {
+				var values = await _carlistService.GetPlatesList();
+				return View(values.ToList().ToPagedList(sayfa, pageSize));
+				
+            }
         }
+   
 
 
         public async Task<IActionResult> GetCarDetail(int id)
@@ -27,11 +40,5 @@ namespace DapperProject.Controllers
             return View(values);
         }
 
-        public PartialViewResult Search()
-        {
-            return PartialView();
-        }
-
-        
     }
 }

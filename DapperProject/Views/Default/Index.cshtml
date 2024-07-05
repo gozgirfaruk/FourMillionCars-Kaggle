@@ -1,7 +1,7 @@
 ﻿@using X.PagedList
 @using X.PagedList.Mvc
 @using X.PagedList.Mvc.Core
-@model IPagedList<ResultPlatesDto>
+@model IPagedList<SearchResultDto>
 
 @{
     Layout = null;
@@ -45,12 +45,8 @@
 						</div>
 						<div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
 							<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-								<li class=" scroll active"><a href="#home">home</a></li>
-								<li class="scroll"><a href="#service">service</a></li>
-								<li class="scroll"><a href="#featured-cars">featured cars</a></li>
-								<li class="scroll"><a href="#new-cars">new cars</a></li>
-								<li class="scroll"><a href="#brand">brands</a></li>
-								<li class="scroll"><a href="#contact">contact</a></li>
+								<li class=" scroll active"><a href="#home">Ana Sayfa</a></li>
+								<li class=" scroll active"><a href="#home">İletişim</a></li>
 							</ul>
 						</div>
 					</div>
@@ -59,16 +55,15 @@
 		</div>
 		<div class="container">
 			<div class="welcome-hero-txt">
-				<h2>get your desired car in resonable price</h2>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore   magna aliqua.
-				</p>
-				<button class="welcome-btn" onclick="window.location.href='#'">contact us</button>
+				<h2>4 Milyondan Fazla Aracı İnceleyebilirsiniz</h2>
+				
+				<button class="welcome-btn" onclick="window.location.href='#'">Bize Yazın</button>
+				<br />
 			</div>
 		</div>
 		<div class="container">
-
-			@await Html.PartialAsync("/Views/Default/Search.cshtml")
+			@await Component.InvokeAsync("_UILayoutSearchPartialComponent")
+		
 			
 		</div>
 	</section>

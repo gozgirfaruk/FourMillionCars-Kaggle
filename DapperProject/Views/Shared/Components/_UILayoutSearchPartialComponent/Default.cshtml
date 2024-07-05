@@ -1,0 +1,133 @@
+﻿@model SearchViewModel
+<div class="row">
+	<div class="col-md-12">
+		<div class="model-search-content">
+
+			<div class="row">
+				<form>
+					<h4 style="text-align:center">Lütfen Plaka Girmeyi Unutmayınız</h4>
+				<br />
+				<hr />
+				<div class="col-md-offset-1 col-md-2 col-sm-12">
+					<div class="single-model-search">
+						<h2>Marka Adı Giriniz</h2>
+						<div>
+							<input class="form-control" placeholder="Marka " asp-for="Brand"  required/>
+						</div>
+					</div>
+					<div class="single-model-search">
+						<h2>Aracın Modeli</h2>
+						<div>
+							<input class="form-control" placeholder="Model " asp-for="Model" />
+						</div>
+					</div>
+					<div class="single-model-search">
+						<h2>Renk Giriniz</h2>
+						<div>
+							<input class="form-control" placeholder="Renk " asp-for="Color" />
+						</div>
+					</div>
+				</div>
+				<div class="col-md-offset-1 col-md-2 col-sm-12">
+					<div class="single-model-search">
+						<h2>Üretim Yılı Gir</h2>
+						<div>
+							<input class="form-control" placeholder="Yıl" asp-for="Year" />
+						</div>
+					</div>
+					<div class="single-model-search">
+						<h2>Motor Gücü Hacmi</h2>
+						<div class="model-select-icon">
+							<select class="form-control" asp-for="MotorVolume">
+
+								<option value="">Motor Gücü</option>
+
+								<option value="1300 cc ve altı">1300 cc ve altı</option>
+								<option value="1301-1600 cc">1301-1600 cc</option>
+								<option value="1601-1800 cc">1601-1800 cc</option>
+								<option value="1801-2000 cc">1801-2000 cc</option>
+								<option value="2001-2500 cc">2001-2500 cc</option>
+								<option value="3001-3500 cc">3001-3500 cc</option>
+								<option value="3501-4000 cc">3501-4000 cc</option>
+								<option value="4001-4500 cc">4001-4500 cc</option>
+								<option value="4501-5000 cc">4501-5000 cc</option>
+								<option value="5001-5500 cc">5001-5500 cc</option>
+								<option value="5501-6000 cc">5501-6000 cc</option>
+								<option value="6001 cc ve üzeri">6001 cc ve üzeri</option>
+
+							</select><!-- /.select-->
+						</div><!-- /.model-select-icon -->
+					</div>
+					<div class="single-model-search">
+						<h2>Yakıt Tipi</h2>
+						<div class="model-select-icon">
+							<select class="form-control" asp-for="Fuel">
+
+								<option value="">Yakıt Tipi</option><!-- /.option-->
+
+								<option value="Benzin/LPG">Benzin/LPG</option><!-- /.option-->
+
+								<option value="Dizel">Dizel</option><!-- /.option-->
+								<option value="Elektrik">Elektrik</option><!-- /.option-->
+								<option value="Hibrit">Hibrit</option><!-- /.option-->
+
+							</select><!-- /.select-->
+						</div><!-- /.model-select-icon -->
+					</div>
+				</div>
+				<div class="col-md-offset-1 col-md-2 col-sm-12">
+					<div class="single-model-search">
+						<h2>Kasa Tipini Seçiniz</h2>
+						<div class="model-select-icon">
+							<select class="form-control" asp-for="CaseType">
+
+								<option value="">Seç</option><!-- /.option-->
+								<option value="Sedan">Sedan</option><!-- /.option-->
+								<option value="Arazi Aracı">Arazi Aracı</option><!-- /.option-->
+								<option value="Spor / Coupe">Spor / Coupe</option><!-- /.option-->
+								<option value="Minivan">Minivan</option><!-- /.option-->
+								<option value="Crossover">Crossover</option><!-- /.option-->
+								<option value="Roadster">Roadster</option><!-- /.option-->
+								<option value="MPV">MPV</option><!-- /.option-->
+								<option value="Hatchback 3 Kapı">Hatchback 3 Kapı</option><!-- /.option-->
+								<option value="Üstü Açık / Cabriolet">Üstü Açık / Cabriolet</option><!-- /.option-->
+								<option value="Hatchback 5 Kapı">Hatchback 5 Kapı</option><!-- /.option-->
+								<option value="Station Wagon">Station Wagon</option><!-- /.option-->
+
+							
+
+							</select><!-- /.select-->
+						</div><!-- /.model-select-icon -->
+					</div>
+					<div class="single-model-search">
+						<h2>Vites Türü</h2>
+						<div class="model-select-icon">
+							<select class="form-control" asp-for="ShiftType">
+
+								<option value="">Seç</option><!-- /.option-->
+								<option value="Düz Vites">Manuel Vites</option><!-- /.option-->
+								<option value="Yarı Otomatik Vites">Yarı Otomatik Vites</option><!-- /.option-->
+								<option value="Otomatik Vites">Otomatik Vites</option><!-- /.option-->
+
+							</select><!-- /.select-->
+						</div><!-- /.model-select-icon -->
+					</div>
+					<div class="single-model-search">
+						<h2>Plaka Gir</h2>
+						<div class="model-select-icon">
+							<input type="text" class="form-control" asp-for="CityNr"/>
+						</div><!-- /.model-select-icon -->
+					</div>
+				</div>
+				<div class="col-md-2 col-sm-6">
+					<div class="single-model-search text-center">
+						<button type="submit" class="welcome-btn model-search-btn" >
+						Listele
+						</button>
+					</div>
+                    </div>
+                </form>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,7 +1,7 @@
 ﻿namespace DapperProject.Dtos.PlatesDtos
 {
-	public class GetByIdPlateDto
-	{
+    public class SearchResultDto
+    {
         public int ID { get; set; }
         public string Plate { get; set; }
         public int CityNr { get; set; }
