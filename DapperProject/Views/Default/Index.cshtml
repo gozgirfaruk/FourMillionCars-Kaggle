@@ -1,0 +1,180 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc
+@using X.PagedList.Mvc.Core
+@model IPagedList<ResultPlatesDto>
+
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet">
+	<title>CarVilla</title>
+	<link rel="shortcut icon" type="image/icon" href="~/carvilla/assets/logo/favicon.png" />
+	<link rel="stylesheet" href="~/carvilla/assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="~/carvilla/assets/css/linearicons.css">
+	<link rel="stylesheet" href="~/carvilla/assets/css/flaticon.css">
+	<link rel="stylesheet" href="~/carvilla/assets/css/animate.css">
+	<link rel="stylesheet" href="~/carvilla/assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="~/carvilla/assets/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="~/carvilla/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="~/carvilla/assets/css/bootsnav.css">
+	<link rel="stylesheet" href="~/carvilla/assets/css/style.css">
+	<link rel="stylesheet" href="~/carvilla/assets/css/responsive.css">
+	<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+
+</head>
+
+<body>
+	
+	<section id="home" class="welcome-hero">
+		<div class="top-area">
+			<div class="header-area">
+				<nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy" data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+					<div class="container">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+								<i class="fa fa-bars"></i>
+							</button>
+							<a class="navbar-brand" href="index.html">carvilla<span></span></a>
+						</div>
+						<div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+							<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+								<li class=" scroll active"><a href="#home">home</a></li>
+								<li class="scroll"><a href="#service">service</a></li>
+								<li class="scroll"><a href="#featured-cars">featured cars</a></li>
+								<li class="scroll"><a href="#new-cars">new cars</a></li>
+								<li class="scroll"><a href="#brand">brands</a></li>
+								<li class="scroll"><a href="#contact">contact</a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<div class="container">
+			<div class="welcome-hero-txt">
+				<h2>get your desired car in resonable price</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore   magna aliqua.
+				</p>
+				<button class="welcome-btn" onclick="window.location.href='#'">contact us</button>
+			</div>
+		</div>
+		<div class="container">
+
+			@await Html.PartialAsync("/Views/Default/Search.cshtml")
+			
+		</div>
+	</section>
+
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<section id="featured-cars" class="featured-cars">
+		<div class="container">
+			<div class="section-header">
+				<p>Filtrelenmiş İlanları <span>Bu Alandan</span> İnceleyebilirsiniz</p>
+				<h2>Araba Detayları</h2>
+			</div>
+			<div class="featured-cars-content">
+
+				<div class="row"> 
+					<table class="table table-hover" >
+						<tr>
+							<th>ID</th>
+							<th>Marka</th>
+							<th>Model</th>
+							<th>Yıl</th>
+							<th>Tam Adı</th>
+							<th>Detay</th>
+							<th colspan="2">Bilgileri İndir</th>
+						
+						</tr>
+						@foreach(var item in Model)
+						{
+								<tr>
+							<th>@item.ID</th>
+							<td>@item.Brand</td>
+							<td>@item.Model</td>
+							<td>@item.Year</td>
+							<td>@item.Title</td>
+							<td><a href="/Default/GetCarDetail/@item.ID" class="btn btn-outline-success">Göz At</a></td>
+							<td><a href="#"><i class="fa-regular fa-file-pdf"></i></a></td>
+							<td><a href="#"><i class="fa-regular fa-file-xls"></i></a></td>
+						</tr>
+						}
+					</table>
+					
+					@Html.PagedListPager((IPagedList)Model,sayfa=>Url.Action("Index",new {sayfa}),new PagedListRenderOptions
+					{
+					LiElementClasses = new[] { "page-item" },
+					PageClasses = new[] { "page-link" }
+					})
+				</div>
+		
+			</div>
+		</div>
+
+	</section>
+	
+
+	<section id="brand" class="brand">
+		<div class="container">
+			<div class="brand-area">
+				<div class="owl-carousel owl-theme brand-item">
+					<div class="item">
+						<a href="#">
+							<img src="~/carvilla/assets/images/brand/br1.png" alt="brand-image" />
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="~/carvilla/assets/images/brand/br2.png" alt="brand-image" />
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="~/carvilla/assets/images/brand/br3.png" alt="brand-image" />
+						</a>
+					</div>
+					<div class="item">
+						<a href="#">
+							<img src="~/carvilla/assets/images/brand/br4.png" alt="brand-image" />
+						</a>
+					</div>
+
+					<div class="item">
+						<a href="#">
+							<img src="~/carvilla/assets/images/brand/br5.png" alt="brand-image" />
+						</a>
+					</div>
+
+					<div class="item">
+						<a href="#">
+							<img src="~/carvilla/assets/images/brand/br6.png" alt="brand-image" />
+						</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</section>
+
+	<script src="~/carvilla/assets/js/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<script src="~/carvilla/assets/js/bootstrap.min.js"></script>
+	<script src="~/carvilla/assets/js/bootsnav.js"></script>
+	<script src="~/carvilla/assets/js/owl.carousel.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+	<script src="~/carvilla/assets/js/custom.js"></script>
+</body>
+</html>
