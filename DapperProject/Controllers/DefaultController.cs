@@ -11,6 +11,7 @@ namespace DapperProject.Controllers
     {
         private readonly ICarListService _carlistService;
 
+
 		public DefaultController(ICarListService carlistService)
 		{
 			_carlistService = carlistService;
@@ -22,7 +23,7 @@ namespace DapperProject.Controllers
             if(!string.IsNullOrEmpty(dto.Brand))
             {
 				var values = await _carlistService.SearchPlates(dto);
-				return View(values.ToList().ToPagedList(sayfa, 20));
+				return View(values.ToList().ToPagedList(sayfa, pageSize));
 			}
             else 
             {

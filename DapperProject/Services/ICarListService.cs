@@ -8,5 +8,14 @@ namespace DapperProject.Services
 		Task<List<SearchResultDto>> GetPlatesList();
 		Task<GetByIdPlatesDto> GetByIdPlates(int id);
 		Task<List<SearchResultDto>> SearchPlates(SearchViewModel model);
+
+	 	int TotalCarCount();
+		int OldCarYear();
+		int YoungCarYear();
+
+		string MostUseCar();
+
+
+
 	}
 }
