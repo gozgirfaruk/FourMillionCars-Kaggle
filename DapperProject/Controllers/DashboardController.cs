@@ -12,13 +12,20 @@ namespace DapperProject.Controllers
             _carService = carService;
         }
 
-        public IActionResult Index()
+		public  IActionResult Index()
 		{
-			ViewBag.distinctCar = _carService.TotalCarCount();
-			ViewBag.oldcar=_carService.OldCarYear();
-			ViewBag.youngcar = _carService.YoungCarYear();
-			ViewBag.mostcar = _carService.MostUseCar();
-			return View();
+            List<int> data = _carService.MostFiceCarCount();
+            List<string> labels = _carService.MostFiveCarName();
+            ViewBag.Data = data;
+            ViewBag.Labels = labels;
+
+
+            List<int> data1 = _carService.CartLinecount();
+            List<string> label1 = _carService.ChartLinename();
+            ViewBag.name = data1;
+            ViewBag.number = label1;
+            return View();
 		}
+
 	}
 }

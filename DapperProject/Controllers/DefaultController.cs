@@ -1,4 +1,6 @@
-﻿using DapperProject.Dtos.PlatesDtos;
+﻿using ClosedXML.Excel;
+using DapperProject.Dtos.PlatesDtos;
+using DapperProject.Dtos.RaporlamaDtos;
 using DapperProject.Models;
 using DapperProject.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -33,13 +35,12 @@ namespace DapperProject.Controllers
             }
         }
    
-
-
         public async Task<IActionResult> GetCarDetail(int id)
         {
             var values = await _carlistService.GetByIdPlates(id);
             return View(values);
         }
-
+      
+     
     }
 }

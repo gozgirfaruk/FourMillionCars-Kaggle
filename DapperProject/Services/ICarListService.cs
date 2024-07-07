@@ -1,4 +1,5 @@
 ﻿using DapperProject.Dtos.PlatesDtos;
+using DapperProject.Dtos.StatisticDtos;
 using DapperProject.Models;
 
 namespace DapperProject.Services
@@ -14,8 +15,12 @@ namespace DapperProject.Services
 		int YoungCarYear();
 
 		string MostUseCar();
+		List<string> MostFiveCarName();
+		List<int> MostFiceCarCount();
+
+        List<string> ChartLinename();
+        List<int> CartLinecount();
 
 
-
-	}
+    }
 }

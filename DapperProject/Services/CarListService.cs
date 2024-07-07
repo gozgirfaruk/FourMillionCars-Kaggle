@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using DapperProject.Context;
 using DapperProject.Dtos.PlatesDtos;
+using DapperProject.Dtos.StatisticDtos;
 using DapperProject.Models;
 using OfficeOpenXml;
 
@@ -86,6 +87,38 @@ namespace DapperProject.Services
 			var connection = _context.CreateConnection();
 			var values = connection.ExecuteScalar<string>(query);
 			return values;
+        }
+
+        public List<string> MostFiveCarName()
+        {
+			string query = "Select Top(5) BRAND  From PLATES Group By BRAND Order By BRAND Desc";
+            var connection = _context.CreateConnection();
+            var values = connection.Query<string>(query);
+            return values.ToList();
+        }
+
+        public List<int> MostFiceCarCount()
+        {
+			string query = "Select Top(5)  Count(*)  From PLATES Group By BRAND  Order By BRAND Desc";
+			var connection = _context.CreateConnection();
+			var values = connection.Query<int>(query);
+			return values.ToList();
+        }
+
+        public List<string> ChartLinename()
+        {
+            string query = "Select Top(26) BRAND  From PLATES Group By BRAND Order By BRAND";
+            var connection = _context.CreateConnection();
+            var values = connection.Query<string>(query);
+            return values.ToList();
+        }
+
+        public List<int> CartLinecount()
+        {
+            string query = "Select Top(26)  Count(*)  From PLATES Group By BRAND  Order By BRAND";
+            var connection = _context.CreateConnection();
+            var values = connection.Query<int>(query);
+            return values.ToList();
         }
     }
 }
