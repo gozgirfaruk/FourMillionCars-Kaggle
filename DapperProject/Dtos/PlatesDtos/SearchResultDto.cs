@@ -9,12 +9,12 @@
         public string Brand { get; set; }
         public string Model { get; set; }
         public DateTime LicenceDate { get; set; }
-        public string? Year { get; set; }
-        public string? Fuel { get; set; }
-        public string? ShiftType { get; set; }
-        public string? MotorVolume { get; set; }
-        public string? MotorPower { get; set; }
-        public string? Color { get; set; }
-        public string? CaseType { get; set; }
+        public string Year { get; set; }
+        public string Fuel { get; set; }
+        public string ShiftType { get; set; }
+        public string MotorVolume { get; set; }
+        public string MotorPower { get; set; }
+        public string Color { get; set; }
+        public string CaseType { get; set; }
     }
 }
