@@ -11,9 +11,9 @@
 
 ![Screenshot_23](https://github.com/gozgirfaruk/FourMillionCars/assets/125920944/f3b38e9d-fb6e-4453-9e71-b79a7a5b1535)
 
-![Screenshot_21](https://github.com/gozgirfaruk/FourMillionCars/assets/125920944/6ee1b942-407d-49b9-84e9-28b21ade5d95)
+![Screenshot_6](https://github.com/user-attachments/assets/f3076625-1691-4214-ba20-9816bcf022e8)
 
-![Screenshot_22](https://github.com/gozgirfaruk/FourMillionCars/assets/125920944/5fdbd49d-6210-415b-99b2-88b6d349f597)
+![Screenshot_7](https://github.com/user-attachments/assets/2034b6e1-decb-428c-8847-5f1a74af82f3)
 
 
 
